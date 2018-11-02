@@ -11,7 +11,8 @@
 		A5049600218C8E1E00FC2033 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FD218C8E0700FC2033 /* Quick.framework */; };
 		A5049602218C8ED700FC2033 /* Nimble.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FE218C8E0700FC2033 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5049603218C8ED700FC2033 /* Quick.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FD218C8E0700FC2033 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A58ABC5F218C7C560038656F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* ViewController.swift */; };
+		A5049607218C911B00FC2033 /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049606218C911B00FC2033 /* RestaurantListController.swift */; };
+		A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* RestaurantListViewController.swift */; };
 		A58ABC60218C7C560038656F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ABC58218C7C560038656F /* Assets.xcassets */; };
 		A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */; };
 		A58ABC68218C7C680038656F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC66218C7C670038656F /* Tests.swift */; };
@@ -47,9 +48,10 @@
 /* Begin PBXFileReference section */
 		A50495FD218C8E0700FC2033 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		A50495FE218C8E0700FC2033 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		A5049606218C911B00FC2033 /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
 		A58ABC30218C7C0A0038656F /* Zomavan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zomavan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC44218C7C0C0038656F /* ZomavanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZomavanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A58ABC57218C7C560038656F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A58ABC57218C7C560038656F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		A58ABC58218C7C560038656F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		A58ABC5E218C7C560038656F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +93,31 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		A5049605218C90CB00FC2033 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				A5049608218C915000FC2033 /* Restaurant List */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		A5049608218C915000FC2033 /* Restaurant List */ = {
+			isa = PBXGroup;
+			children = (
+				A5049606218C911B00FC2033 /* RestaurantListController.swift */,
+				A5049609218C916000FC2033 /* UI */,
+			);
+			path = "Restaurant List";
+			sourceTree = "<group>";
+		};
+		A5049609218C916000FC2033 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A58ABC57218C7C560038656F /* RestaurantListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		A58ABC27218C7C0A0038656F = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +141,8 @@
 		A58ABC56218C7C560038656F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A58ABC6D218C7DB10038656F /* Application */,
 				A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */,
+				A58ABC6D218C7DB10038656F /* Application */,
 				A58ABC6B218C7CB90038656F /* Assets */,
 				A58ABC6A218C7C9E0038656F /* Supporting Files */,
 			);
@@ -158,9 +185,9 @@
 		A58ABC6D218C7DB10038656F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				A58ABC57218C7C560038656F /* ViewController.swift */,
 				A58ABC6E218C7DCB0038656F /* ZomavanController.swift */,
 				A58ABC76218C86DE0038656F /* Protocols */,
+				A5049605218C90CB00FC2033 /* Use Cases */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -293,7 +320,8 @@
 			files = (
 				A58ABC79218C86F90038656F /* UseCaseCoordinator.swift in Sources */,
 				A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */,
-				A58ABC5F218C7C560038656F /* ViewController.swift in Sources */,
+				A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */,
+				A5049607218C911B00FC2033 /* RestaurantListController.swift in Sources */,
 				A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
