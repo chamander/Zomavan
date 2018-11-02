@@ -1,10 +1,10 @@
 import UIKit
 
 final class ZomavanController: UseCaseCoordinator {
-    
-    init() {
-        self.viewController = ViewController()
+
+    var viewController: UIViewController {
+        return restaurantListController.viewController // The only view in the application at the moment.
     }
-    
-    let viewController: UIViewController
+
+    private let restaurantListController = RestaurantListController()
 }
