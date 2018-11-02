@@ -12,6 +12,7 @@
 		A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */; };
 		A58ABC68218C7C680038656F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC66218C7C670038656F /* Tests.swift */; };
 		A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC6E218C7DCB0038656F /* ZomavanController.swift */; };
+		A58ABC79218C86F90038656F /* UseCaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC78218C86F90038656F /* UseCaseCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,10 @@
 		A58ABC66218C7C670038656F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		A58ABC67218C7C670038656F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58ABC6E218C7DCB0038656F /* ZomavanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZomavanController.swift; sourceTree = "<group>"; };
+		A58ABC72218C80FF0038656F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A58ABC74218C81C60038656F /* Use Case Controllers.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Use Case Controllers.md"; sourceTree = "<group>"; };
+		A58ABC75218C824D0038656F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A58ABC78218C86F90038656F /* UseCaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,7 @@
 		A58ABC27218C7C0A0038656F = {
 			isa = PBXGroup;
 			children = (
+				A58ABC70218C7FD80038656F /* Documentation */,
 				A58ABC56218C7C560038656F /* Source */,
 				A58ABC65218C7C670038656F /* Tests */,
 				A58ABC31218C7C0A0038656F /* Products */,
@@ -121,8 +127,35 @@
 			children = (
 				A58ABC57218C7C560038656F /* ViewController.swift */,
 				A58ABC6E218C7DCB0038656F /* ZomavanController.swift */,
+				A58ABC76218C86DE0038656F /* Protocols */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		A58ABC70218C7FD80038656F /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				A58ABC72218C80FF0038656F /* README.md */,
+				A58ABC71218C80E30038656F /* Software Design */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		A58ABC71218C80E30038656F /* Software Design */ = {
+			isa = PBXGroup;
+			children = (
+				A58ABC75218C824D0038656F /* README.md */,
+				A58ABC74218C81C60038656F /* Use Case Controllers.md */,
+			);
+			path = "Software Design";
+			sourceTree = "<group>";
+		};
+		A58ABC76218C86DE0038656F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A58ABC78218C86F90038656F /* UseCaseCoordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58ABC79218C86F90038656F /* UseCaseCoordinator.swift in Sources */,
 				A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */,
 				A58ABC5F218C7C560038656F /* ViewController.swift in Sources */,
 				A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */,

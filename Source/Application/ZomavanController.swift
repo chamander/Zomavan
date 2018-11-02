@@ -1,6 +1,6 @@
 import UIKit
 
-final class ZomavanController {
+final class ZomavanController: UseCaseCoordinator {
     
     init() {
         self.viewController = ViewController()
