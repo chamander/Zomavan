@@ -17,10 +17,11 @@
 		A5049612218C962B00FC2033 /* RequestServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049611218C962B00FC2033 /* RequestServicing.swift */; };
 		A5049614218C968A00FC2033 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049613218C968A00FC2033 /* NetworkMethod.swift */; };
 		A5049616218C96D100FC2033 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049615218C96D100FC2033 /* NetworkError.swift */; };
+		A504961B218C9BA500FC2033 /* NetworkMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049619218C9B9F00FC2033 /* NetworkMethodTests.swift */; };
 		A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* RestaurantListViewController.swift */; };
 		A58ABC60218C7C560038656F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ABC58218C7C560038656F /* Assets.xcassets */; };
 		A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */; };
-		A58ABC68218C7C680038656F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC66218C7C670038656F /* Tests.swift */; };
+		A58ABC68218C7C680038656F /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC66218C7C670038656F /* ResultTests.swift */; };
 		A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC6E218C7DCB0038656F /* ZomavanController.swift */; };
 		A58ABC79218C86F90038656F /* UseCaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC78218C86F90038656F /* UseCaseCoordinator.swift */; };
 /* End PBXBuildFile section */
@@ -59,13 +60,14 @@
 		A5049611218C962B00FC2033 /* RequestServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServicing.swift; sourceTree = "<group>"; };
 		A5049613218C968A00FC2033 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		A5049615218C96D100FC2033 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A5049619218C9B9F00FC2033 /* NetworkMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethodTests.swift; sourceTree = "<group>"; };
 		A58ABC30218C7C0A0038656F /* Zomavan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zomavan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC44218C7C0C0038656F /* ZomavanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZomavanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC57218C7C560038656F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		A58ABC58218C7C560038656F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		A58ABC5E218C7C560038656F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A58ABC66218C7C670038656F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		A58ABC66218C7C670038656F /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		A58ABC67218C7C670038656F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58ABC6E218C7DCB0038656F /* ZomavanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZomavanController.swift; sourceTree = "<group>"; };
 		A58ABC72218C80FF0038656F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -155,6 +157,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		A5049617218C9A8100FC2033 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A58ABC66218C7C670038656F /* ResultTests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A5049618218C9B8F00FC2033 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5049619218C9B9F00FC2033 /* NetworkMethodTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		A58ABC27218C7C0A0038656F = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +209,8 @@
 		A58ABC65218C7C670038656F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A58ABC66218C7C670038656F /* Tests.swift */,
+				A5049618218C9B8F00FC2033 /* Network */,
+				A5049617218C9A8100FC2033 /* Utilities */,
 				A58ABC6C218C7CD00038656F /* Supporting Files */,
 			);
 			path = Tests;
@@ -374,7 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58ABC68218C7C680038656F /* Tests.swift in Sources */,
+				A58ABC68218C7C680038656F /* ResultTests.swift in Sources */,
+				A504961B218C9BA500FC2033 /* NetworkMethodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
