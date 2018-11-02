@@ -1,9 +1,17 @@
-import XCTest
+import Nimble
+import Quick
 
 @testable import Zomavan
 
-final class ZomavanTests: XCTestCase {
+final class ZomavanTests: QuickSpec {
 
-    func testExample() { }
-
+    override func spec() {
+     
+        describe("a test") {
+            
+            it("passes") {
+                expect(true).to(beTruthy())
+            }
+        }
+    }
 }
