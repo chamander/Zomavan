@@ -10,4 +10,11 @@ final class RestaurantListViewController: UITableViewController {
     func update(with viewModel: RestaurantListViewModel) {
         self.title = viewModel.title
     }
+
+    func updateList(with controller: RestaurantListController) {
+        self.tableView.dataSource = controller
+        self.tableView.delegate = controller
+        controller.prepare(tableView: self.tableView)
+        self.tableView.reloadData()
+    }
 }

@@ -11,7 +11,7 @@
 		A5049600218C8E1E00FC2033 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FD218C8E0700FC2033 /* Quick.framework */; };
 		A5049602218C8ED700FC2033 /* Nimble.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FE218C8E0700FC2033 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5049603218C8ED700FC2033 /* Quick.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = A50495FD218C8E0700FC2033 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A5049607218C911B00FC2033 /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049606218C911B00FC2033 /* RestaurantListController.swift */; };
+		A5049607218C911B00FC2033 /* RestaurantListUseCaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049606218C911B00FC2033 /* RestaurantListUseCaseController.swift */; };
 		A504960C218C93BC00FC2033 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504960B218C93BC00FC2033 /* NetworkClient.swift */; };
 		A504960F218C93E900FC2033 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504960E218C93E900FC2033 /* Result.swift */; };
 		A5049612218C962B00FC2033 /* RequestServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049611218C962B00FC2033 /* RequestServicing.swift */; };
@@ -27,6 +27,11 @@
 		A5049635218F0CD300FC2033 /* AbbotsfordRestaurantListProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049634218F0CD300FC2033 /* AbbotsfordRestaurantListProviderTests.swift */; };
 		A5049638218F0D4B00FC2033 /* RequestSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5049637218F0D4B00FC2033 /* RequestSpy.swift */; };
 		A504963E218F19EC00FC2033 /* HTTPURLResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504963D218F19EC00FC2033 /* HTTPURLResponse+Stub.swift */; };
+		A5049641218F1C4300FC2033 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504963F218F1C4000FC2033 /* Dependencies.swift */; };
+		A50A3BB3218F21B800C53C0C /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB2218F21B800C53C0C /* RestaurantListController.swift */; };
+		A50A3BB7218F246800C53C0C /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */; };
+		A50A3BB9218F289600C53C0C /* RestaurantListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */; };
+		A50A3BBB218F297700C53C0C /* DispatchQueue+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */; };
 		A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* RestaurantListViewController.swift */; };
 		A58ABC60218C7C560038656F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ABC58218C7C560038656F /* Assets.xcassets */; };
 		A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */; };
@@ -63,7 +68,7 @@
 /* Begin PBXFileReference section */
 		A50495FD218C8E0700FC2033 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		A50495FE218C8E0700FC2033 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
-		A5049606218C911B00FC2033 /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
+		A5049606218C911B00FC2033 /* RestaurantListUseCaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListUseCaseController.swift; sourceTree = "<group>"; };
 		A504960B218C93BC00FC2033 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		A504960E218C93E900FC2033 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A5049611218C962B00FC2033 /* RequestServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServicing.swift; sourceTree = "<group>"; };
@@ -79,6 +84,11 @@
 		A5049634218F0CD300FC2033 /* AbbotsfordRestaurantListProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbbotsfordRestaurantListProviderTests.swift; sourceTree = "<group>"; };
 		A5049637218F0D4B00FC2033 /* RequestSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSpy.swift; sourceTree = "<group>"; };
 		A504963D218F19EC00FC2033 /* HTTPURLResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Stub.swift"; sourceTree = "<group>"; };
+		A504963F218F1C4000FC2033 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		A50A3BB2218F21B800C53C0C /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
+		A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
+		A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCellViewModel.swift; sourceTree = "<group>"; };
+		A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utilities.swift"; sourceTree = "<group>"; };
 		A58ABC30218C7C0A0038656F /* Zomavan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zomavan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC44218C7C0C0038656F /* ZomavanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZomavanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC57218C7C560038656F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +144,8 @@
 		A5049608218C915000FC2033 /* Restaurant List */ = {
 			isa = PBXGroup;
 			children = (
-				A5049606218C911B00FC2033 /* RestaurantListController.swift */,
+				A5049606218C911B00FC2033 /* RestaurantListUseCaseController.swift */,
+				A50A3BB1218F217D00C53C0C /* Controller */,
 				A504962D218F057A00FC2033 /* Models */,
 				A5049628218F03BB00FC2033 /* Protocols */,
 				A5049609218C916000FC2033 /* UI */,
@@ -147,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				A58ABC57218C7C560038656F /* RestaurantListViewController.swift */,
+				A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A504960E218C93E900FC2033 /* Result.swift */,
+				A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				A504961D218F013700FC2033 /* RestaurantListViewModel.swift */,
+				A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -277,6 +291,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A50A3BB1218F217D00C53C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A50A3BB2218F21B800C53C0C /* RestaurantListController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A58ABC27218C7C0A0038656F = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */,
+				A504963F218F1C4000FC2033 /* Dependencies.swift */,
 				A58ABC6D218C7DB10038656F /* Application */,
 				A58ABC6B218C7CB90038656F /* Assets */,
 				A504960A218C939B00FC2033 /* Network */,
@@ -487,17 +510,22 @@
 				A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */,
 				A504961E218F013700FC2033 /* RestaurantListViewModel.swift in Sources */,
 				A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */,
+				A50A3BBB218F297700C53C0C /* DispatchQueue+Utilities.swift in Sources */,
+				A5049641218F1C4300FC2033 /* Dependencies.swift in Sources */,
 				A5049632218F065200FC2033 /* AbbotsfordRestaurantListProvider.swift in Sources */,
-				A5049607218C911B00FC2033 /* RestaurantListController.swift in Sources */,
+				A5049607218C911B00FC2033 /* RestaurantListUseCaseController.swift in Sources */,
 				A5049612218C962B00FC2033 /* RequestServicing.swift in Sources */,
+				A50A3BB7218F246800C53C0C /* RestaurantListCell.swift in Sources */,
 				A504962C218F041F00FC2033 /* EndpointClient.swift in Sources */,
 				A504960F218C93E900FC2033 /* Result.swift in Sources */,
+				A50A3BB3218F21B800C53C0C /* RestaurantListController.swift in Sources */,
 				A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */,
 				A5049614218C968A00FC2033 /* NetworkMethod.swift in Sources */,
 				A504962F218F059100FC2033 /* Restaurant.swift in Sources */,
 				A504960C218C93BC00FC2033 /* NetworkClient.swift in Sources */,
 				A5049616218C96D100FC2033 /* NetworkError.swift in Sources */,
 				A504962A218F03DB00FC2033 /* RestaurantListProviding.swift in Sources */,
+				A50A3BB9218F289600C53C0C /* RestaurantListCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
