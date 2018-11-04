@@ -39,6 +39,6 @@ private struct ApplicationDependencies: ApplicationDependenciesProvider {
         self.imageProvider = ImageProvider(requestServicing: requestServicing)
     }
 
-    let imageProvider: ImageProvider
+    let imageProvider: ImageProviding
     let restaurantListProvider: ZomatoRestaurantListProviding
 }

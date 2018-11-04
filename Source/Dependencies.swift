@@ -3,5 +3,5 @@ protocol HasRestaurantListProvider {
 }
 
 protocol HasImageProvider {
-    var imageProvider: ImageProvider { get }
+    var imageProvider: ImageProviding { get }
 }
