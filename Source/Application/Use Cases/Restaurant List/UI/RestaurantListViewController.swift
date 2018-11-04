@@ -5,6 +5,7 @@ final class RestaurantListViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         self.view.backgroundColor = .white
+        self.tableView.separatorStyle = .none
     }
 
     func update(with viewModel: RestaurantListViewModel) {
