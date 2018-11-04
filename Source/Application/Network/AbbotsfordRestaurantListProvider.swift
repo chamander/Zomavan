@@ -85,5 +85,3 @@ private struct RequestRestaurantResponse: Codable {
 private struct RequestLocationResponse: Codable {
     let address: String
 }
-
-
