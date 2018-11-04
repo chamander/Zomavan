@@ -26,12 +26,17 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
             it("provides the correct URL to hit") {
                 subject.withRestaurantList { _ in () }
                 expect(requestSpy.requests.last?.url.absoluteString).to(equal("https://developers.zomato.com/api/v2.1/location_details"))
-                expect(requestSpy.requests.last?.queryItems).to(equal(
+                expect(requestSpy.requests.last?.queryItems).to(contain(
                     [
                         URLQueryItem(name: "entity_id", value: "98284"),
                         URLQueryItem(name: "entity_type", value: "subzone")
                     ]
                 ))
+            }
+
+            it("requests a maximum of ten restaurants") {
+                subject.withRestaurantList { _ in () }
+                expect(requestSpy.requests.last?.queryItems).to(contain(URLQueryItem(name: "count", value: "10")))
             }
 
             it("correctly parses data in the correct format") {

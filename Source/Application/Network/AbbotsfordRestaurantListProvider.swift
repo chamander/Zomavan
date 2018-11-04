@@ -7,6 +7,7 @@ struct AbbotsfordRestaurantListProvider: RestaurantListProviding, EndpointClient
     static let queryItems: [URLQueryItem] = [
         URLQueryItem(name: "entity_id", value: "98284"),
         URLQueryItem(name: "entity_type", value: "subzone"),
+        URLQueryItem(name: "count", value: "10"),
     ]
 
     static let headerItems: [URLHeaderItem] = [
