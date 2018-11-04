@@ -35,7 +35,7 @@ private struct ApplicationDependencies: ApplicationDependenciesProvider {
     static let production: ApplicationDependencies = ApplicationDependencies(requestServicing: NetworkClient())
 
     init(requestServicing: RequestServicing) {
-        self.restaurantListProvider = ZomatoRestaurantListProvider(requestServicing: requestServicing)
+        self.restaurantListProvider = RealmRestaurantListProvider(underlyingProvider: ZomatoRestaurantListProvider(requestServicing: requestServicing))
         self.imageProvider = ImageProvider(requestServicing: requestServicing)
     }
 
