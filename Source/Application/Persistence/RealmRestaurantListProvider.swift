@@ -4,25 +4,21 @@ import RealmSwift
 struct RealmRestaurantListProvider: ZomatoRestaurantListProviding {
 
     private let provider: ZomatoRestaurantListProviding
+    private let configuration: Realm.Configuration
+    private var realm: Realm {
+        return Realm(unsafelyConfigured: configuration)
+    }
 
-    init(underlyingProvider: ZomatoRestaurantListProviding) {
+    init(underlyingProvider: ZomatoRestaurantListProviding, configuration: Realm.Configuration = .defaultConfiguration) {
         self.provider = underlyingProvider
+        self.configuration = configuration
     }
 
     func withRestaurantList(forSubzoneID subzoneID: String, execute closure: @escaping (Result<[Restaurant], AnyError>) -> Void) {
 
-        let realm: Realm
-
-        do {
-            try realm = Realm()
-        } catch {
-            closure(.failure(AnyError(error)))
-            return
-        }
-
         let listQueryResult = realm.restaurantListResults(forSubzoneID: subzoneID)
 
-        if let list = listQueryResult.first {
+        if let list: Realm_RestaurantList = listQueryResult.first {
             let restaurants: [Restaurant] = self.applicationRestaurants(from: list)
             if !restaurants.isEmpty {
                 closure(.success(restaurants))
@@ -32,7 +28,7 @@ struct RealmRestaurantListProvider: ZomatoRestaurantListProviding {
         self.provider.withRestaurantList(forSubzoneID: subzoneID) { result in
             switch result {
             case let .success(restaurants):
-                self.updateRestaurantList(restaurants, forSubzoneID: subzoneID)
+                self.realm.updateRestaurantList(restaurants, forSubzoneID: subzoneID)
                 closure(.success(restaurants))
             case let .failure(error):
                 closure(.failure(AnyError(error)))
@@ -51,41 +47,35 @@ struct RealmRestaurantListProvider: ZomatoRestaurantListProviding {
                 imageURL: imageURL)
         }
     }
-
-    private func restaurantListResults(in realm: Realm, forSubzoneID subzoneID: String) -> Results<Realm_RestaurantList>? {
-        return realm.objects(Realm_RestaurantList.self).filter("subzoneID = %@", subzoneID)
-    }
-
-    private func updateRestaurantList(_ list: [Restaurant], forSubzoneID subzoneID: String) {
-
-        if let realm = try? Realm() {
-
-            let newRealmRestaurantList = Realm_RestaurantList()
-            let realmRestaurants = List<Realm_Restaurant>()
-            let _realmRestaurants: [Realm_Restaurant] = list.map { restaurant in
-                let realmRestaurant = Realm_Restaurant()
-                realmRestaurant.name = restaurant.name
-                realmRestaurant.address = restaurant.address
-                realmRestaurant.imageURLString = restaurant.imageURL.absoluteString
-                return realmRestaurant
-            }
-
-            realmRestaurants.append(objectsIn: _realmRestaurants)
-
-            newRealmRestaurantList.subzoneID = subzoneID
-            newRealmRestaurantList.restaurants.append(objectsIn: realmRestaurants)
-            try? realm.write {
-                realm.delete(realm.restaurantListResults(forSubzoneID: subzoneID))
-                realm.add(newRealmRestaurantList)
-            }
-        }
-    }
 }
 
 private extension Realm {
 
     func restaurantListResults(forSubzoneID subzoneID: String) -> Results<Realm_RestaurantList> {
         return self.objects(Realm_RestaurantList.self).filter("subzoneID = %@", subzoneID)
+    }
+
+    func updateRestaurantList(_ list: [Restaurant], forSubzoneID subzoneID: String) {
+
+        let newRealmRestaurantList = Realm_RestaurantList()
+        let realmRestaurants = List<Realm_Restaurant>()
+        let _realmRestaurants: [Realm_Restaurant] = list.map { restaurant in
+            let realmRestaurant = Realm_Restaurant()
+            realmRestaurant.name = restaurant.name
+            realmRestaurant.address = restaurant.address
+            realmRestaurant.imageURLString = restaurant.imageURL.absoluteString
+            return realmRestaurant
+        }
+
+        realmRestaurants.append(objectsIn: _realmRestaurants)
+
+        newRealmRestaurantList.subzoneID = subzoneID
+        newRealmRestaurantList.restaurants.append(objectsIn: realmRestaurants)
+
+        try? write {
+            delete(restaurantListResults(forSubzoneID: subzoneID))
+            add(newRealmRestaurantList)
+        }
     }
 }
 
