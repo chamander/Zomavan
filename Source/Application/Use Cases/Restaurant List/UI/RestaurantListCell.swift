@@ -18,9 +18,11 @@ final class RestaurantListCell: UITableViewCell {
             UIColor.black.withAlphaComponent(0.7).cgColor,
         ]
 
+        nameLabel.textColor = .white
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 16.0, weight: .medium))
 
+        addressLabel.textColor = .white
         addressLabel.adjustsFontForContentSizeCategory = true
         addressLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 10.0, weight: .regular))
 
