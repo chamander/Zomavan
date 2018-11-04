@@ -6,11 +6,17 @@ final class RestaurantListCell: UITableViewCell {
 
     private let nameLabel: UILabel
     private let addressLabel: UILabel
+    private let gradientLayer: CAGradientLayer
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
         let nameLabel = UILabel()
         let addressLabel = UILabel()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.clear.cgColor,
+            UIColor.black.withAlphaComponent(0.7).cgColor,
+        ]
 
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 16.0, weight: .medium))
@@ -20,9 +26,11 @@ final class RestaurantListCell: UITableViewCell {
 
         self.nameLabel = nameLabel
         self.addressLabel = addressLabel
+        self.gradientLayer = gradientLayer
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.prepareSubviews()
+        self.prepareSublayers()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,6 +40,11 @@ final class RestaurantListCell: UITableViewCell {
     func update(with viewModel: RestaurantListCellViewModel) {
         self.nameLabel.text = viewModel.name
         self.addressLabel.text = viewModel.address
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.gradientLayer.frame = self.contentView.bounds
     }
 
     private func prepareSubviews() {
@@ -53,5 +66,9 @@ final class RestaurantListCell: UITableViewCell {
                 self.addressLabel.trailingAnchor.constraint(equalTo: self.nameLabel.trailingAnchor),
             ]
         )
+    }
+
+    private func prepareSublayers() {
+        self.contentView.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
