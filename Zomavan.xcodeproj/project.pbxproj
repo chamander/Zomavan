@@ -37,7 +37,9 @@
 		A50A3BC3218F419E00C53C0C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A3BC1218F419E00C53C0C /* Realm.framework */; };
 		A50A3BC7218F429C00C53C0C /* RealmRestaurantListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */; };
 		A50A3BC9218F432C00C53C0C /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BC8218F432C00C53C0C /* Array+Utilities.swift */; };
+		A50A3BCB218F4EED00C53C0C /* RealmImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BCA218F4EED00C53C0C /* RealmImageProvider.swift */; };
 		A50A3BCD218F4F0500C53C0C /* ImageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BCC218F4F0500C53C0C /* ImageProviding.swift */; };
+		A50A3BCF218F582200C53C0C /* Realm+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BCE218F582200C53C0C /* Realm+Utilities.swift */; };
 		A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* RestaurantListViewController.swift */; };
 		A58ABC60218C7C560038656F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ABC58218C7C560038656F /* Assets.xcassets */; };
 		A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC5D218C7C560038656F /* ApplicationDelegate.swift */; };
@@ -100,7 +102,9 @@
 		A50A3BC1218F419E00C53C0C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = SOURCE_ROOT; };
 		A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRestaurantListProvider.swift; sourceTree = "<group>"; };
 		A50A3BC8218F432C00C53C0C /* Array+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utilities.swift"; sourceTree = "<group>"; };
+		A50A3BCA218F4EED00C53C0C /* RealmImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmImageProvider.swift; sourceTree = "<group>"; };
 		A50A3BCC218F4F0500C53C0C /* ImageProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviding.swift; sourceTree = "<group>"; };
+		A50A3BCE218F582200C53C0C /* Realm+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Utilities.swift"; sourceTree = "<group>"; };
 		A58ABC30218C7C0A0038656F /* Zomavan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zomavan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC44218C7C0C0038656F /* ZomavanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZomavanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC57218C7C560038656F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				A504960E218C93E900FC2033 /* Result.swift */,
 				A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */,
 				A50A3BC8218F432C00C53C0C /* Array+Utilities.swift */,
+				A50A3BCE218F582200C53C0C /* Realm+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */,
+				A50A3BCA218F4EED00C53C0C /* RealmImageProvider.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -578,7 +584,9 @@
 				A504960F218C93E900FC2033 /* Result.swift in Sources */,
 				A50A3BB3218F21B800C53C0C /* RestaurantListController.swift in Sources */,
 				A58ABC6F218C7DCB0038656F /* ZomavanController.swift in Sources */,
+				A50A3BCF218F582200C53C0C /* Realm+Utilities.swift in Sources */,
 				A5049614218C968A00FC2033 /* NetworkMethod.swift in Sources */,
+				A50A3BCB218F4EED00C53C0C /* RealmImageProvider.swift in Sources */,
 				A504962F218F059100FC2033 /* Restaurant.swift in Sources */,
 				A504960C218C93BC00FC2033 /* NetworkClient.swift in Sources */,
 				A5049616218C96D100FC2033 /* NetworkError.swift in Sources */,
