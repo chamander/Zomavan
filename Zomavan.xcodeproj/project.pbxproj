@@ -33,6 +33,9 @@
 		A50A3BB7218F246800C53C0C /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */; };
 		A50A3BB9218F289600C53C0C /* RestaurantListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */; };
 		A50A3BBB218F297700C53C0C /* DispatchQueue+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */; };
+		A50A3BC2218F419E00C53C0C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A3BC0218F419E00C53C0C /* RealmSwift.framework */; };
+		A50A3BC3218F419E00C53C0C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A3BC1218F419E00C53C0C /* Realm.framework */; };
+		A50A3BC7218F429C00C53C0C /* RealmRestaurantListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */; };
 		A50A3BC9218F432C00C53C0C /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BC8218F432C00C53C0C /* Array+Utilities.swift */; };
 		A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58ABC57218C7C560038656F /* RestaurantListViewController.swift */; };
 		A58ABC60218C7C560038656F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58ABC58218C7C560038656F /* Assets.xcassets */; };
@@ -92,6 +95,9 @@
 		A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
 		A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCellViewModel.swift; sourceTree = "<group>"; };
 		A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utilities.swift"; sourceTree = "<group>"; };
+		A50A3BC0218F419E00C53C0C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = SOURCE_ROOT; };
+		A50A3BC1218F419E00C53C0C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = SOURCE_ROOT; };
+		A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRestaurantListProvider.swift; sourceTree = "<group>"; };
 		A50A3BC8218F432C00C53C0C /* Array+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utilities.swift"; sourceTree = "<group>"; };
 		A58ABC30218C7C0A0038656F /* Zomavan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zomavan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58ABC44218C7C0C0038656F /* ZomavanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZomavanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50A3BC3218F419E00C53C0C /* Realm.framework in Frameworks */,
+				A50A3BC2218F419E00C53C0C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +141,8 @@
 			children = (
 				A50495FE218C8E0700FC2033 /* Nimble.framework */,
 				A50495FD218C8E0700FC2033 /* Quick.framework */,
+				A50A3BC1218F419E00C53C0C /* Realm.framework */,
+				A50A3BC0218F419E00C53C0C /* RealmSwift.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -305,6 +315,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A50A3BC5218F425100C53C0C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A50A3BC6218F429C00C53C0C /* RealmRestaurantListProvider.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		A58ABC27218C7C0A0038656F = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +398,7 @@
 			children = (
 				A58ABC6E218C7DCB0038656F /* ZomavanController.swift */,
 				A5049630218F063100FC2033 /* Network */,
+				A50A3BC5218F425100C53C0C /* Persistence */,
 				A58ABC76218C86DE0038656F /* Protocols */,
 				A5049605218C90CB00FC2033 /* Use Cases */,
 			);
@@ -419,6 +438,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A58ABC4D218C7C0C0038656F /* Build configuration list for PBXNativeTarget "Zomavan" */;
 			buildPhases = (
+				A50A3BC4218F41B600C53C0C /* Copy Carthage Frameworks */,
 				A58ABC2C218C7C0A0038656F /* Sources */,
 				A58ABC2D218C7C0A0038656F /* Frameworks */,
 				A58ABC2E218C7C0A0038656F /* Resources */,
@@ -507,12 +527,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A50A3BC4218F41B600C53C0C /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A58ABC2C218C7C0A0038656F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A58ABC79218C86F90038656F /* UseCaseCoordinator.swift in Sources */,
+				A50A3BC7218F429C00C53C0C /* RealmRestaurantListProvider.swift in Sources */,
 				A58ABC63218C7C560038656F /* ApplicationDelegate.swift in Sources */,
 				A504961E218F013700FC2033 /* RestaurantListViewModel.swift in Sources */,
 				A58ABC5F218C7C560038656F /* RestaurantListViewController.swift in Sources */,
@@ -683,6 +729,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAV3HJNSJX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,6 +751,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAV3HJNSJX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
