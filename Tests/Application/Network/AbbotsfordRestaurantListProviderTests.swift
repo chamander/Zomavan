@@ -52,10 +52,12 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
                 expect(resultantRestaurants).toEventually(equal(
                     [
                         Restaurant(
+                            identifier: "16582069",
                             name: "Jinda Thai Restaurant",
                             address: "7 Ferguson Street, Abbotsford, Melbourne",
                             imageURL: URL(string: "https://www.zomato.com")!),
                         Restaurant(
+                            identifier: "18494999",
                             name: "Au79",
                             address: "27-29 Nicholson Street, Abbotsford, Melbourne",
                             imageURL: URL(string: "https://www.zomato.com")!),
@@ -73,6 +75,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
     "best_rated_restaurant": [
         {
             "restaurant": {
+                "id": "16582069",
                 "name": "Jinda Thai Restaurant",
                 "location": {
                     "address": "7 Ferguson Street, Abbotsford, Melbourne"
@@ -82,6 +85,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
         },
         {
             "restaurant": {
+                "id": "18494999",
                 "name": "Au79",
                 "location": {
                     "address": "27-29 Nicholson Street, Abbotsford, Melbourne"

@@ -42,6 +42,7 @@ struct RealmRestaurantListProvider: ZomatoRestaurantListProviding {
                 return nil
             }
             return Restaurant(
+                identifier: realmRestaurant.identifier,
                 name: realmRestaurant.name,
                 address: realmRestaurant.address,
                 imageURL: imageURL)
@@ -61,6 +62,7 @@ private extension Realm {
         let realmRestaurants = List<Realm_Restaurant>()
         let _realmRestaurants: [Realm_Restaurant] = list.map { restaurant in
             let realmRestaurant = Realm_Restaurant()
+            realmRestaurant.identifier = restaurant.identifier
             realmRestaurant.name = restaurant.name
             realmRestaurant.address = restaurant.address
             realmRestaurant.imageURLString = restaurant.imageURL.absoluteString
@@ -87,6 +89,7 @@ class Realm_RestaurantList: Object {
 
 class Realm_Restaurant: Object {
 
+    @objc dynamic var identifier: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var address: String = ""
     @objc dynamic var imageURLString: String = ""
