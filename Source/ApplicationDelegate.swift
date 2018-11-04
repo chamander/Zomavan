@@ -21,9 +21,24 @@ final class ApplicationDelegate: UIResponder, UIApplicationDelegate {
     private func initialiseApplication() -> (window: UIWindow, controller: ZomavanController) {
 
         let window: UIWindow = UIWindow(frame: UIScreen.main.bounds)
-        let controller: ZomavanController = ZomavanController()
+        let controller: ZomavanController = ZomavanController(dependencies: ApplicationDependencies.production)
 
         window.rootViewController = controller.viewController
         return (window, controller)
     }
+}
+
+typealias ApplicationDependenciesProvider = HasRestaurantListProvider & HasImageProvider
+
+private struct ApplicationDependencies: ApplicationDependenciesProvider {
+
+    static let production: ApplicationDependencies = ApplicationDependencies(requestServicing: NetworkClient())
+
+    init(requestServicing: RequestServicing) {
+        self.restaurantListProvider = AbbotsfordRestaurantListProvider(requestServicing: requestServicing)
+        self.imageProvider = ImageProvider(requestServicing: requestServicing)
+    }
+
+    let imageProvider: ImageProvider
+    let restaurantListProvider: RestaurantListProviding
 }

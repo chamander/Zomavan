@@ -4,7 +4,7 @@ struct NetworkClient: RequestServicing {
 
     var session: URLSession = .shared
 
-    func request(via method: NetworkMethod, url: URL, with queryItems: [URLQueryItem]?, handler: @escaping (Result<NetworkResponse, NetworkError>) -> Void) {
+    func request(via method: NetworkMethod, url: URL, queryItems: [URLQueryItem]?, headerItems: [URLHeaderItem]? = nil, handler: @escaping (Result<NetworkResponse, NetworkError>) -> Void) {
 
         if var components = URLComponents(url: url, resolvingAgainstBaseURL: false) {
 
@@ -13,6 +13,10 @@ struct NetworkClient: RequestServicing {
             let resultantURL: URL! = components.url
             var request = URLRequest(url: resultantURL)
             request.httpMethod = method.httpMethod
+
+            headerItems?.forEach { headerItem in
+                request.addValue(headerItem.value, forHTTPHeaderField: headerItem.field)
+            }
 
             let task: URLSessionTask = self.session.dataTask(with: request) { data, response, error in
 
