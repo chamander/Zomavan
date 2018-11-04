@@ -4,22 +4,22 @@ final class RestaurantListCell: UITableViewCell {
 
     static let height: CGFloat = 300.0
 
-    private let nameLabel: UILabel = UILabel()
-    private let addressLabel: UILabel = UILabel()
+    private let nameLabel: UILabel
+    private let addressLabel: UILabel
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
         let nameLabel = UILabel()
         let addressLabel = UILabel()
 
-        nameLabel.text = "NAME"
-        addressLabel.text = "ADDRESS"
-
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 18.0, weight: .medium))
 
         addressLabel.adjustsFontForContentSizeCategory = true
         addressLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 14.0, weight: .regular))
+
+        self.nameLabel = nameLabel
+        self.addressLabel = addressLabel
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.prepareSubviews()
