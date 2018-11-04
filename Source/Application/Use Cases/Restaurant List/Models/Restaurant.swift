@@ -1,6 +1,6 @@
 import Foundation
 
-struct Restaurant: Equatable {
+struct Restaurant: Equatable, Hashable {
 
     let name: String
     let address: String

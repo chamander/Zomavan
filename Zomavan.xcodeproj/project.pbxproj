@@ -29,6 +29,7 @@
 		A504963E218F19EC00FC2033 /* HTTPURLResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504963D218F19EC00FC2033 /* HTTPURLResponse+Stub.swift */; };
 		A5049641218F1C4300FC2033 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504963F218F1C4000FC2033 /* Dependencies.swift */; };
 		A50A3BB3218F21B800C53C0C /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB2218F21B800C53C0C /* RestaurantListController.swift */; };
+		A50A3BB5218F232400C53C0C /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB4218F232400C53C0C /* ImageProvider.swift */; };
 		A50A3BB7218F246800C53C0C /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */; };
 		A50A3BB9218F289600C53C0C /* RestaurantListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */; };
 		A50A3BBB218F297700C53C0C /* DispatchQueue+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */; };
@@ -86,6 +87,7 @@
 		A504963D218F19EC00FC2033 /* HTTPURLResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Stub.swift"; sourceTree = "<group>"; };
 		A504963F218F1C4000FC2033 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		A50A3BB2218F21B800C53C0C /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
+		A50A3BB4218F232400C53C0C /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		A50A3BB6218F246800C53C0C /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
 		A50A3BB8218F289600C53C0C /* RestaurantListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCellViewModel.swift; sourceTree = "<group>"; };
 		A50A3BBA218F297700C53C0C /* DispatchQueue+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utilities.swift"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A5049631218F065200FC2033 /* AbbotsfordRestaurantListProvider.swift */,
+				A50A3BB4218F232400C53C0C /* ImageProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				A5049607218C911B00FC2033 /* RestaurantListUseCaseController.swift in Sources */,
 				A5049612218C962B00FC2033 /* RequestServicing.swift in Sources */,
 				A50A3BB7218F246800C53C0C /* RestaurantListCell.swift in Sources */,
+				A50A3BB5218F232400C53C0C /* ImageProvider.swift in Sources */,
 				A504962C218F041F00FC2033 /* EndpointClient.swift in Sources */,
 				A504960F218C93E900FC2033 /* Result.swift in Sources */,
 				A50A3BB3218F21B800C53C0C /* RestaurantListController.swift in Sources */,

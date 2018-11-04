@@ -67,7 +67,7 @@ private struct RequestResponse: Codable {
 extension RequestResponse {
     func extractRestaurants() -> [Restaurant] {
         return bestRatedRestaurant.map { wrapper in
-            Restaurant(name: wrapper.restaurant.name, address: wrapper.restaurant.location.address, imageURL: wrapper.restaurant.photosUrl)
+            Restaurant(name: wrapper.restaurant.name, address: wrapper.restaurant.location.address, imageURL: wrapper.restaurant.thumb)
         }
     }
 }
@@ -79,7 +79,7 @@ private struct RequestRestaurantResponseWrapper: Codable {
 private struct RequestRestaurantResponse: Codable {
     let name: String
     let location: RequestLocationResponse
-    let photosUrl: URL
+    let thumb: URL
 }
 
 private struct RequestLocationResponse: Codable {

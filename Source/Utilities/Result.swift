@@ -28,6 +28,15 @@ struct AnyError: Swift.Error {
     }
 }
 
+struct ErrorMessage: Swift.Error {
+
+    let localizedDescription: String
+
+    init(_ localizedDescription: String) {
+        self.localizedDescription = localizedDescription
+    }
+}
+
 extension AnyError: CustomStringConvertible {
 
     var description: String {

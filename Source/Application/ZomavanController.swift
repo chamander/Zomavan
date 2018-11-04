@@ -2,7 +2,7 @@ import UIKit
 
 final class ZomavanController: UseCaseCoordinator {
 
-    init(dependencies: HasRestaurantListProvider) {
+    init(dependencies: HasRestaurantListProvider & HasImageProvider) {
         self.restaurantListController = RestaurantListUseCaseController(dependencies: dependencies)
     }
 

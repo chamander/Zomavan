@@ -28,7 +28,7 @@ final class ApplicationDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-typealias ApplicationDependenciesProvider = HasRestaurantListProvider
+typealias ApplicationDependenciesProvider = HasRestaurantListProvider & HasImageProvider
 
 private struct ApplicationDependencies: ApplicationDependenciesProvider {
 
@@ -36,7 +36,9 @@ private struct ApplicationDependencies: ApplicationDependenciesProvider {
 
     init(requestServicing: RequestServicing) {
         self.restaurantListProvider = AbbotsfordRestaurantListProvider(requestServicing: requestServicing)
+        self.imageProvider = ImageProvider(requestServicing: requestServicing)
     }
 
+    let imageProvider: ImageProvider
     let restaurantListProvider: RestaurantListProviding
 }

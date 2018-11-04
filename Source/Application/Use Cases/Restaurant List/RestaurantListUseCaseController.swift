@@ -7,7 +7,7 @@ final class RestaurantListUseCaseController: UseCaseCoordinator {
 
     private var listContentController: RestaurantListController?
 
-    init(dependencies: HasRestaurantListProvider) {
+    init(dependencies: HasRestaurantListProvider & HasImageProvider) {
 
         self.dependencies = dependencies
 
@@ -24,10 +24,10 @@ final class RestaurantListUseCaseController: UseCaseCoordinator {
     }
 
     private func fetchData() {
-        self.dependencies.restaurantListProvider.withRestaurantList { result in
+        self.dependencies.restaurantListProvider.withRestaurantList { [dependencies] result in
             switch result {
             case let .success(restaurants):
-                let listContentController = RestaurantListController(restaurants: restaurants)
+                let listContentController = RestaurantListController(dependencies: dependencies, restaurants: restaurants)
                 self.listContentController = listContentController
                 safelyOnMainThread {
                     self.listViewController.updateList(with: listContentController)

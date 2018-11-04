@@ -6,12 +6,14 @@ final class RestaurantListCell: UITableViewCell {
 
     private let nameLabel: UILabel
     private let addressLabel: UILabel
+    private let thumbnailImageView: UIImageView
     private let gradientLayer: CAGradientLayer
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
         let nameLabel = UILabel()
         let addressLabel = UILabel()
+        let thumbnailImageView = UIImageView()
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor.clear.cgColor,
@@ -26,8 +28,12 @@ final class RestaurantListCell: UITableViewCell {
         addressLabel.adjustsFontForContentSizeCategory = true
         addressLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 10.0, weight: .regular))
 
+        thumbnailImageView.contentMode = .scaleAspectFill
+        thumbnailImageView.clipsToBounds = true
+
         self.nameLabel = nameLabel
         self.addressLabel = addressLabel
+        self.thumbnailImageView = thumbnailImageView
         self.gradientLayer = gradientLayer
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -44,14 +50,22 @@ final class RestaurantListCell: UITableViewCell {
         self.addressLabel.text = viewModel.address
     }
 
+    func updateImage(_ image: UIImage) {
+        self.thumbnailImageView.image = image
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.gradientLayer.frame = self.contentView.bounds
     }
 
+    override func prepareForReuse() {
+        self.thumbnailImageView.image = nil
+    }
+
     private func prepareSubviews() {
 
-        [nameLabel, addressLabel].forEach { view in
+        [thumbnailImageView, nameLabel, addressLabel].forEach { view in
             self.contentView.addSubview(view)
             view.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -66,11 +80,16 @@ final class RestaurantListCell: UITableViewCell {
 
                 self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20.0),
                 self.addressLabel.trailingAnchor.constraint(equalTo: self.nameLabel.trailingAnchor),
+
+                self.thumbnailImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+                self.thumbnailImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
+                self.thumbnailImageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
+                self.thumbnailImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             ]
         )
     }
 
     private func prepareSublayers() {
-        self.contentView.layer.insertSublayer(gradientLayer, at: 0)
+        self.thumbnailImageView.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

@@ -77,7 +77,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
                 "location": {
                     "address": "7 Ferguson Street, Abbotsford, Melbourne"
                 },
-                "photos_url": "https://www.zomato.com"
+                "thumb": "https://www.zomato.com"
             }
         },
         {
@@ -86,7 +86,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
                 "location": {
                     "address": "27-29 Nicholson Street, Abbotsford, Melbourne"
                 },
-                "photos_url": "https://www.zomato.com"
+                "thumb": "https://www.zomato.com"
             }
         }
     ]
