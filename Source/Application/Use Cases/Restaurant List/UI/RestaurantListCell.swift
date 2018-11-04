@@ -60,6 +60,8 @@ final class RestaurantListCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        self.nameLabel.text = nil
+        self.addressLabel.text = nil
         self.thumbnailImageView.image = nil
     }
 
