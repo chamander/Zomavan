@@ -1,6 +1,6 @@
 import UIKit
 
-struct ImageProvider {
+struct ImageProvider: ImageProviding {
 
     private let requestServicing: RequestServicing
 

@@ -10,7 +10,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
 
         describe("an Abbotsford Restaurant List Provider") {
 
-            var subject: AbbotsfordRestaurantListProvider!
+            var subject: ZomatoRestaurantListProvider!
             var requestSpy: RequestSpy!
 
             afterEach {
@@ -20,11 +20,11 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
 
             beforeEach {
                 requestSpy = RequestSpy()
-                subject = AbbotsfordRestaurantListProvider(requestServicing: requestSpy)
+                subject = ZomatoRestaurantListProvider(requestServicing: requestSpy)
             }
 
             it("provides the correct URL to hit") {
-                subject.withRestaurantList { _ in () }
+                subject.withRestaurantList(forSubzoneID: "98284") { _ in () }
                 expect(requestSpy.requests.last?.url.absoluteString).to(equal("https://developers.zomato.com/api/v2.1/location_details"))
                 expect(requestSpy.requests.last?.queryItems).to(contain(
                     [
@@ -35,7 +35,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
             }
 
             it("requests a maximum of ten restaurants") {
-                subject.withRestaurantList { _ in () }
+                subject.withRestaurantList(forSubzoneID: "") { _ in () }
                 expect(requestSpy.requests.last?.queryItems).to(contain(URLQueryItem(name: "count", value: "10")))
             }
 
@@ -44,7 +44,7 @@ final class AbbotsfordRestaurantListProviderTests: QuickSpec {
                 var resultantRestaurants: [Restaurant]?
 
                 requestSpy.stubbedResult = .success((data: StubData.restaurantListJSONData, response: .stubbedSuccess()))
-                subject.withRestaurantList { result in
+                subject.withRestaurantList(forSubzoneID: "") { result in
                     if case let .success(list) = result {
                         resultantRestaurants = list
                     }
