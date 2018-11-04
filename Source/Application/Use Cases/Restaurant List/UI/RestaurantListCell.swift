@@ -13,10 +13,10 @@ final class RestaurantListCell: UITableViewCell {
         let addressLabel = UILabel()
 
         nameLabel.adjustsFontForContentSizeCategory = true
-        nameLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 18.0, weight: .medium))
+        nameLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 16.0, weight: .medium))
 
         addressLabel.adjustsFontForContentSizeCategory = true
-        addressLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 14.0, weight: .regular))
+        addressLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .systemFont(ofSize: 10.0, weight: .regular))
 
         self.nameLabel = nameLabel
         self.addressLabel = addressLabel
@@ -43,13 +43,13 @@ final class RestaurantListCell: UITableViewCell {
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-                self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16.0),
+                self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20.0),
                 self.addressLabel.leadingAnchor.constraint(equalTo: self.nameLabel.leadingAnchor),
 
                 self.addressLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -24.0),
                 self.nameLabel.bottomAnchor.constraint(equalTo: self.addressLabel.topAnchor, constant: -8.0),
 
-                self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16.0),
+                self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20.0),
                 self.addressLabel.trailingAnchor.constraint(equalTo: self.nameLabel.trailingAnchor),
             ]
         )
