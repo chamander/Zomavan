@@ -6,4 +6,8 @@ final class RestaurantListViewController: UITableViewController {
         super.loadView()
         self.view.backgroundColor = .white
     }
+
+    func update(with viewModel: RestaurantListViewModel) {
+        self.title = viewModel.title
+    }
 }
