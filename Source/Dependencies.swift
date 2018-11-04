@@ -1,5 +1,5 @@
 protocol HasRestaurantListProvider {
-    var restaurantListProvider: RestaurantListProviding { get }
+    var restaurantListProvider: ZomatoRestaurantListProviding { get }
 }
 
 protocol HasImageProvider {

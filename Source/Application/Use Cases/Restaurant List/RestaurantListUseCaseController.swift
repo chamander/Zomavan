@@ -24,7 +24,8 @@ final class RestaurantListUseCaseController: UseCaseCoordinator {
     }
 
     private func fetchData() {
-        self.dependencies.restaurantListProvider.withRestaurantList { [dependencies] result in
+        let abbotsfordSubzoneID = "98284"
+        self.dependencies.restaurantListProvider.withRestaurantList(forSubzoneID: abbotsfordSubzoneID) { [dependencies] result in
             switch result {
             case let .success(restaurants):
                 let listContentController = RestaurantListController(dependencies: dependencies, restaurants: restaurants)

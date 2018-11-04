@@ -1,4 +1,4 @@
-protocol RestaurantListProviding {
+protocol ZomatoRestaurantListProviding {
 
-    func withRestaurantList(execute closure: @escaping (Result<[Restaurant], AnyError>) -> Void)
+    func withRestaurantList(forSubzoneID subzoneID: String, execute closure: @escaping (Result<[Restaurant], AnyError>) -> Void)
 }

@@ -1,11 +1,10 @@
 import Foundation
 
-struct AbbotsfordRestaurantListProvider: RestaurantListProviding, EndpointClient {
+struct ZomatoRestaurantListProvider: ZomatoRestaurantListProviding, EndpointClient {
 
     static let baseURLString: String = "https://developers.zomato.com/api/v2.1/"
 
     static let queryItems: [URLQueryItem] = [
-        URLQueryItem(name: "entity_id", value: "98284"),
         URLQueryItem(name: "entity_type", value: "subzone"),
         URLQueryItem(name: "count", value: "10"),
     ]
@@ -29,7 +28,7 @@ struct AbbotsfordRestaurantListProvider: RestaurantListProviding, EndpointClient
         }
     }
 
-    func withRestaurantList(execute closure: @escaping (Result<[Restaurant], AnyError>) -> Void) {
+    func withRestaurantList(forSubzoneID subzoneID: String, execute closure: @escaping (Result<[Restaurant], AnyError>) -> Void) {
 
         let url: URL! = URL(string: self.urlString(for: .locationDetails))
         let handler: (Result<NetworkResponse, NetworkError>) -> Void = { result in
@@ -54,8 +53,8 @@ struct AbbotsfordRestaurantListProvider: RestaurantListProviding, EndpointClient
         requestServicing.request(
             via: .get,
             url: url,
-            queryItems: AbbotsfordRestaurantListProvider.queryItems,
-            headerItems: AbbotsfordRestaurantListProvider.headerItems,
+            queryItems: ZomatoRestaurantListProvider.queryItems.appending(URLQueryItem(name: "entity_id", value: subzoneID)),
+            headerItems: ZomatoRestaurantListProvider.headerItems,
             handler: handler)
     }
 }
